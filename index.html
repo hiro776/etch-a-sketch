@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Rohit Mehta">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Etch-A-Sketch</h1>
+    </header>
+
+    <!-- main container -->
+    <div class="container">
+        <div class="button-group">
+            <!-- span.preview will display the current color -->
+            <button id="color" type="button"><span class="preview"></span>Color</button>
+            <button id="rainbow" type="button">Rainbow</button>
+            <button id="erase" type="button">Erase</button>
+            <button id="clear" type="button">Clear</button>
+            <button id="resize" type="button">Resize</button>
+        </div>
+
+        <!-- wrapper for all grid -->
+        <div class="grid"></div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
