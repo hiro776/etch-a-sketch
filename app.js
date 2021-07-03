@@ -9,12 +9,34 @@ const MAX_GRID_SIZE = 64;
 
 // Colors:
 const colorList = [
-    'black', 'red', 'blue', 'green', 'orange', 'yellow', 'pink',
-    'purple', 'violet', 'turquoise', 'gold', 'lime', 'aqua',
+    'black', 'red', 'blue', 'green', 'orange', 'yellow',
+    'purple', 'violet', 'gold', 'lime', 'aqua',
     'navy', 'coral', 'teal', 'brown', 'cadetblue', 'darkred',
     'azure', 'bisque', 'blueviolet', 'blurywood', 'chocolate',
-    'cornflowerblue', 'cyan', 'chartreuse', 'white'
+    'cornflowerblue', 'cyan', 'chartreuse'
 ];
+// set the colors on the color selection menu
+const colorMenu = document.querySelector('.color-list');
+const colorMenuParent = document.querySelector('.color-select');
+for (let i = 0; i < colorList.length; i++) {
+    const colorItem = colorList[i];
+
+    // create a li
+    const li = document.createElement('li');
+    li.classList.add('color-item');
+    li.style.background = colorList[i];
+    
+    // add event listener
+    li.addEventListener('click', (e) => {
+        // console.log(e.target);
+        penColor = e.target.style.background;
+        displayPenColor();
+        colorMenuParent.style.visibility = 'hidden';
+    });
+
+    //add it to the menu
+    colorMenu.appendChild(li);
+}
 
 let penColor = colorList[0];
 
@@ -47,8 +69,7 @@ colorBtn.style.cssText = 'border: 2px solid #c26060';
 colorBtn.onclick = function () {
     console.log('color clicked');
     removeBtnStyle();
-
-
+    colorMenuParent.style.visibility = 'visible';
     colorBtn.style.cssText = 'border: 2px solid #c26060';
 }
 
