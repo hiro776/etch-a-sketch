@@ -25,7 +25,7 @@ for (let i = 0; i < colorList.length; i++) {
     const li = document.createElement('li');
     li.classList.add('color-item');
     li.style.background = colorList[i];
-    
+
     // add event listener
     li.addEventListener('click', (e) => {
         // console.log(e.target);
@@ -157,7 +157,7 @@ const makeGrid = (size = 16) => {
         const div = document.createElement('div');
         div.classList.add('grid-item');
 
-        div.addEventListener('mouseover', (e) => {
+        div.addEventListener('mouseenter', (e) => {
             console.log(e.target);
             if (rainbow) {
                 penColor = colorList[Math.floor(Math.random() * colorList.length)];
